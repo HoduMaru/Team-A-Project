@@ -1,7 +1,6 @@
 package j0622;
 
-//신입=>부서배치->팀장에 정보=>상속기법
-//형식) class  자식클래스명 extends 부모클래스명
+
 class Manager extends Employee{
 	/* 눈에는 보이지 않지만 가지고 있다.
 	String name;
@@ -10,8 +9,8 @@ class Manager extends Employee{
 	String addr;
 	long salary;
 	*/
-djdjejbfjsejofojsof
- 근수 하이
+	String department;//부서명
+	//객체배열->기본배열(int su[]),객체(Employee)만 따로 저장한 배열
 	Employee sub[];
 	//생성자는 상속이 안되기에 
 	public Manager() {}

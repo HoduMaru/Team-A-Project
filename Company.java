@@ -11,7 +11,7 @@ class Manager extends Employee{
 	long salary;
 	*/
 djdjejbfjsejofojsof
-	//객체배열->기본배열(int su[]),객체(Employee)만 따로 저장한 배열
+ 근수 하이
 	Employee sub[];
 	//생성자는 상속이 안되기에 
 	public Manager() {}

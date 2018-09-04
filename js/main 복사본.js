@@ -1,5 +1,33 @@
 function calObj(mode) {
 	var obj = {
+		"check1": function ($el){
+			var result = $el.hasClass('btn_active');
+			if (result) {
+				$el.removeClass('btn_active');
+				$('.btn1').removeClass('btn_active');
+				$('.btn2').removeClass('btn_active');
+			} else {
+				$el.addClass('btn_active');
+				$('.btn1').addClass('btn_active');
+				$('.btn2').addClass('btn_active');
+			}
+		},
+		"check2": function ($el) {
+			var result = $el.hasClass('btn_active');
+			if (result) {
+				$el.removeClass('btn_active');
+			} else {
+				$el.addClass('btn_active');
+			}
+		},
+		"check3": function ($el) {
+			var result = $el.hasClass('btn_active');
+			if (result) {
+				$el.removeClass('btn_active');
+			} else {
+				$el.addClass('btn_active');
+			}
+		},
 		"idChecker": function ($el, email, password) {
 			if ($el.val() === "") {
 				$el.addClass('shake').stop().delay(600).queue(function () {
@@ -23,49 +51,34 @@ function calObj(mode) {
 $(document).ready(function() {
 	// 약관동의 페이지 작업
 	$('.agreement_btn').click(function(e) {
-		var result = $(this).hasClass('btn_active');
-		if (result) {
-			$(this).removeClass('btn_active');
-			$('.btn1').removeClass('btn_active');
-			$('.btn2').removeClass('btn_active');
-		} else {
-			$(this).addClass('btn_active');
-			$('.btn1').addClass('btn_active');
-			$('.btn2').addClass('btn_active');
-		}
+		// $(this).toggleClass('btn_active');
+		calObj('check1')($(this));
 		e.preventDefault();
 	});
 	// 약관동의 페이지 작업
 	$('.btn1').click(function(e) {
-		var result = $('.btn1').hasClass('btn_active');
+		calObj('check2')($(this));
+		var result1 = $('.btn1').hasClass('btn_active');
 		var result2 = $('.btn2').hasClass('btn_active');
-		if ((result == result2) && result || (result == true)) {
-			$(this).removeClass('btn_active');
-			$('.agreement_btn').removeClass('btn_active');
-		} else if(result == false) {
-			$(this).addClass('btn_active');
-			if(result !== result2){
-				$('.agreement_btn').addClass('btn_active');
-			}
-		}
-		e.preventDefault();
-	});
-	// 약관동의 페이지 작업
-	$('.btn2').click(function(e) {
-		var result = $('.btn1').hasClass('btn_active');
-		var result2 = $('.btn2').hasClass('btn_active');
-		if ((result == result2) && result || (result2 == true)) {
-			$(this).removeClass('btn_active');
-			$('.agreement_btn').removeClass('btn_active');
+		if (result1 == result2) {
+			$('.agreement_btn').addClass('btn_active');
 		} else if (result2 == false){
-			$(this).addClass('btn_active');
-			if (result !== result2){
-				$('.agreement_btn').addClass('btn_active');
-			}
-		}
+			$('.agreement_btn').removeClass('btn_active');
+		} 
 		e.preventDefault();
 	});
-	// 약관동의 페이지 작업
+
+	$('.btn2').click(function (e) {
+		calObj('check3')($(this));
+		var result1 = $('.btn1').hasClass('btn_active');
+		var result2 = $('.btn2').hasClass('btn_active');
+		if (result1 == result2) {
+			$('.agreement_btn').addClass('btn_active');
+		} else if (result1 == false) {
+			$('.agreement_btn').removeClass('btn_active');
+		} 
+		e.preventDefault();
+	});
 	$('.btn_bg_redicalRed').click(function(){
 		var result1 = $('.btn1').hasClass('btn_active');
 		var result2 = $('.btn2').hasClass('btn_active');

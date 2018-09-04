@@ -1,0 +1,101 @@
+/*===============================
+
+- YOUNHOSO v4.0 -
+
+author: 	YOUNHOSO PUBLISHER
+email: 		thdbsgh3443@gmail.com
+Copyright 2017-2018
+
+=================================*/
+/*====================
+	CSS RESET
+====================*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video { margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline;
+border-collapse: collapse;}
+body {line-height:1;}
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {display:block;}
+ul li{list-style:none;}
+a {margin: 0; padding: 0; border: 0; vertical-align: baseline; background: transparent; text-decoration: none; color: inherit; display: inline-block;}
+img {vertical-align:top;}
+
+/*========= l_col SYSTEM FLOAT RELIEVE =========*/
+.clearfix:after{content: "";display: block;clear: both;}
+.clear         {clear: both;}
+
+
+/*========= GRID SYSTEM =========*/
+.l_wrapper     {max-width: 1200px;margin: 0 auto;padding: 0 10px; box-sizing: border-box; -webkit-box-sizing: border-box; position: relative;}
+.l_row         {margin: 0 -10px; overflow: hidden;}
+
+
+/*========= l_col SYSTEM =========*/
+[class*="l_col"] {
+    float: left;
+    padding: 0 10px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/*=========GRID MOBILE DEVICES=========*/
+@media only screen and (min-width: 320px) {
+html {
+    -webkit-text-size-adjust: 100%;
+       -moz-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%; /*모바일 사파릴 브라우저는 뷰포트가 변활 시 텍스트의 크기를 자동으로 조절되는것을 막고, 원하는데로 컨트롤 할수가 있다.*/
+}
+.l_col.s1 {width: 8.3333333333%;}
+.l_col.s2 {width: 16.6666666667%;}
+.l_col.s3 {width: 25%;}
+.l_col.s4 {width: 33.3333333333%;}
+.l_col.s5 {width: 41.6666666667%;}
+.l_col.s6 {width: 50%;}
+.l_col.s7 {width: 58.3333333333%;}
+.l_col.s8 {width: 66.6666666667%;}
+.l_col.s9 {width: 75%;}
+.l_col.s10 {width: 83.3333333333%;}
+.l_col.s11 {width: 91.6666666667%;}
+.l_col.s12 {width: 100%;}    
+}
+
+/*=========GRID TABLET DEVICES=========*/
+@media only screen and (min-width: 768px) {
+.l_col.m1 {width: 8.3333333333%;}
+.l_col.m2 {width: 16.6666666667%;}
+.l_col.m3 {width: 25%;}
+.l_col.m4 {width: 33.3333333333%;}
+.l_col.m5 {width: 41.6666666667%;}
+.l_col.m6 {width: 50%;}
+.l_col.m7 {width: 58.3333333333%;}
+.l_col.m8 {width: 66.6666666667%;}
+.l_col.m9 {width: 75%;}
+.l_col.m10 {width: 83.3333333333%;}
+.l_col.m11 {width: 91.6666666667%;}
+.l_col.m12 {width: 100%;}    
+}
+
+/*=========GRID DESKTOP DEVICES=========*/
+@media only screen and (min-width: 1024px) {
+.l_col.l1 {width: 8.3333333333%;}
+.l_col.l2 {width: 16.6666666667%;}
+.l_col.l3 {width: 25%;}
+.l_col.l4 {width: 33.3333333333%;}
+.l_col.l5 {width: 41.6666666667%;}
+.l_col.l6 {width: 50%;}
+.l_col.l7 {width: 58.3333333333%;}
+.l_col.l8 {width: 66.6666666667%;}
+.l_col.l9 {width: 75%;}
+.l_col.l10 {width: 83.3333333333%;}
+.l_col.l11 {width: 91.6666666667%;}
+.l_col.l12 {width: 100%;}    
+}

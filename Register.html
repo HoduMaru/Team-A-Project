@@ -12,7 +12,7 @@
 	<div class="l_wrapper">
 		<div class="inner">
 				<h1 class="logo">
-					<a href="#0" class="tit_28">MEMBERS LOGIN</a>
+					<a href="index.html" class="tit_28">MEMBERS LOGIN</a>
 				</h1>
 				<ul class="clearfix list">
 					<li class="entry agreement l_col s4">약관동의</li>
@@ -20,48 +20,64 @@
 					<li class="entry complete l_col s4">가입완료</li>
 				</ul>
 				<form id="myForm" name="fregisterform" method="post" action="">
-				<div class="join_step3">
-					<ul>
-						<li id="li_id"> 
-							<input type="text" name="mb_id" value="" id="reg_mb_id" placeholder="아이디" required autofocus="on" class="join_cheak_id in_e_sel_menu" minlength="3" maxlength="20">
-							<span id="msg_mb_id"></span>
-						</li>
-						<li id="li_pw">
-							<input type="password" name="mb_password" id="reg_mb_password" placeholder="비밀번호" required class="cheakpw in_e_sel_menu" minlength="3" maxlength="20">
-						</li>
-						<li id="li_pw1">
-							<input type="password" name="mb_password_re" id="reg_mb_password_re" placeholder="비밀번호 재확인" required class="cheakpw1 in_e_sel_menu" minlength="3" maxlength="20">
-						</li>
-					</ul>
-				</div>
-
-				<div class="join_step4">
-					<ul>
-						<li id="li_name">
-							<input type="text" id="reg_mb_name" placeholder="이름" name="mb_name" value="" required class="cheakname in_e_sel_menu" size="10">              
-						</li>
-						<li id="li_mail"> 
-							<input type="hidden" name="old_email" value="">
-							<input type="text" name="mb_email" placeholder="이메일" value="" id="reg_mb_email" required class="cheakemail in_e_sel_menu" size="70" maxlength="100">
-						</li>
-						<li id="li_number">
-							<input type="text" name="mb_hp" value="" id="reg_mb_hp" placeholder="휴대폰번호" required class="cheakenumber in_e_sel_menu" maxlength="20">
-						</li>
-					</ul>
-				</div>
-				<input type="submit" class="step_btn btn_bg_redicalRed" value="동의"/>
+					<div class="join_step3">
+						<ul>
+							<li id="li_id"> 
+								<input type="text" class="animation_shake" name="member_id" placeholder="아이디" id="reg_mb_id" required autofocus="on" class="join_cheak_id in_e_sel_menu" minlength="3" maxlength="20">
+							</li>
+							<li id="li_pw">
+								<input type="password" class="animation_shake" name="member_password" placeholder="비밀번호" id="reg_mb_password" required class="cheakpw in_e_sel_menu" minlength="3" maxlength="20">
+							</li>
+							<li id="li_pw1">
+								<input type="password" class="animation_shake" placeholder="비밀번호 재확인" id="reg_mb_password_re" required class="cheakpw1 in_e_sel_menu" minlength="3" maxlength="20">
+							</li>
+						</ul>
+					</div>
+					<div class="join_step4">
+						<ul>
+							<li id="li_name">
+								<input type="text" class="animation_shake" name="member_name" placeholder="이름" id="reg_mb_name" required class="cheakname in_e_sel_menu" size="10">              
+							</li>
+							<li id="li_mail"> 
+								<input type="text" class="animation_shake" name="member_email" placeholder="이메일" id="reg_mb_email" required class="cheakemail in_e_sel_menu" size="70" maxlength="100">
+							</li>
+							<li id="li_number">
+								<input type="text" class="animation_shake" name="member_hp" placeholder="휴대폰번호" id="reg_mb_hp"  required class="cheakenumber in_e_sel_menu" maxlength="20">
+							</li>
+						</ul>
+					</div>
+					<input type="submit" class="step_btn btn_bg_redicalRed" value="동의"/>
 				</form>
 		</div>
 	</div>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="./js/main.js"></script> 
+	<script type="text/javascript" src="./js/main.js"></script>
 	<script>
 		$(document).ready(function(){
-			$('.step_btn').click(function(){
-				$('#myForm input').each(function(index){
-					calObj('idChecker')($('#myForm input:eq('+index+')'));
+			$('.step_btn').click(function () {
+				$('#myForm .animation_shake').each(function (index) {
+						if($('#myForm .animation_shake').eq(index).val() === ''){
+							$(this).addClass('shake').stop().delay(600).queue(function () {
+								$(this).removeClass('shake');
+							});
+							if($(this).val().length > 1){
+								$(this).removeClass('shake');
+							}
+						}
 				});
+			});
+
+			 //아이디와 비밀번호가 맞지 않을 경우 가입버튼 비활성화를 위한 변수설정
+			var idCheck = 0;
+			var nickCheck = 0;
+			var pwdCheck = 0;
+			$.ajax({
+				dataType: 'json',
+				url: "test.json",
+				success: function(data){
+					
+				}
 			});
 		});
 	</script>

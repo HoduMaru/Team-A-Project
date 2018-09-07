@@ -16,7 +16,7 @@
             <form action="register.html" name="fregisterform" method="post" autocomplete="off">
                 <div class="inner">
                     <h1 class="logo">
-                        <a href="#0" class="tit_28">MEMBERS LOGIN</a>
+                        <a href="index.html" class="tit_28">MEMBERS LOGIN</a>
                     </h1>
                     <ul class="clearfix list">
                         <li class="entry agreement l_col s4 active">약관동의</li>
@@ -343,6 +343,60 @@
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<script type="text/javascript" src="./js/main.js"></script>
+<!-- <script type="text/javascript" src="./js/main.js"></script> -->
+<script type="text/javascript">
+        $('.agreement_btn').click(function (e) {
+            var result = $(this).hasClass('btn_active');
+            if (result) {
+                $(this).removeClass('btn_active');
+                $('.btn1').removeClass('btn_active');
+                $('.btn2').removeClass('btn_active');
+            } else {
+                $(this).addClass('btn_active');
+                $('.btn1').addClass('btn_active');
+                $('.btn2').addClass('btn_active');
+            }
+            e.preventDefault();
+        });
+        $('.btn1').click(function (e) {
+            var result = $('.btn1').hasClass('btn_active');
+            var result2 = $('.btn2').hasClass('btn_active');
+            if ((result == result2) && result || (result == true)) {
+                $(this).removeClass('btn_active');
+                $('.agreement_btn').removeClass('btn_active');
+            } else if (result == false) {
+                $(this).addClass('btn_active');
+                if (result !== result2) {
+                    $('.agreement_btn').addClass('btn_active');
+                }
+            }
+            e.preventDefault();
+        });
+        $('.btn2').click(function (e) {
+            var result = $('.btn1').hasClass('btn_active');
+            var result2 = $('.btn2').hasClass('btn_active');
+            if ((result == result2) && result || (result2 == true)) {
+                $(this).removeClass('btn_active');
+                $('.agreement_btn').removeClass('btn_active');
+            } else if (result2 == false) {
+                $(this).addClass('btn_active');
+                if (result !== result2) {
+                    $('.agreement_btn').addClass('btn_active');
+                }
+            }
+            e.preventDefault();
+        });
+        $('.btn_bg_redicalRed').click(function () {
+            var result1 = $('.btn1').hasClass('btn_active');
+            var result2 = $('.btn2').hasClass('btn_active');
+            var result3 = $('.agreement_btn').hasClass('btn_active');
+            if (result1 == false || result2 == false || result3 == false) {
+                alert("이용약관과 개인정보 수집 및 이용에 대한 안내 모두 동의해주세요.");
+            } else if (result1 == true && result2 == true && result3 == true) {
+                document.location.href = "register.html";
+            }
+            return false;
+        });
+</script>
 </body>
 </html>

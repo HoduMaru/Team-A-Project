@@ -145,11 +145,22 @@ html,body {height: 100%;}
 	background-color: #edeff0;
 }
 .join h1 {text-align: center;}
+.join_step3 li:first-child input{ width: 75%;}
+.id_user {
+    width: 23%;
+    padding: 16px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+.id_user:focus {
+  -moz-outline:none; outline:none;
+}
 .join_step3 li input {
 	width: 100%;
   padding: 20px 10px;
   box-sizing: border-box;
-  border-radius: 5px;
+  border-radius: 3px;
   margin-bottom: 10px;
   outline: none;
   border: 0;
@@ -161,7 +172,7 @@ html,body {height: 100%;}
 	width: 100%;
   padding: 20px 10px;
   box-sizing: border-box;
-  border-radius: 5px;
+  border-radius: 3px;
   margin-bottom: 10px;
   outline: none;
   border: 0;

@@ -1,0 +1,120 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>회원가입</title>
+	<!--DESIGN CSS-->
+	<link rel="stylesheet" href="css/module.css">
+	<link rel="stylesheet" href="css/D_module.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="join">
+	<div class="l_wrapper">
+		<div class="inner">
+				<h1 class="logo">
+					<a href="index.html" class="tit_28">MEMBERS LOGIN</a>
+				</h1>
+				<ul class="clearfix list">
+					<li class="entry agreement l_col s4">약관동의</li>
+					<li class="entry onjoin l_col s4 active">정보입력</li>
+					<li class="entry complete l_col s4">가입완료</li>
+				</ul>
+				<form id="myForm" name="fregisterform" method="post" action="">
+					<div class="join_step3">
+						<ul>
+							<li id="li_id"> 
+								<input type="text" class="animation_shake" name="member_id" placeholder="아이디" id="reg_mb_id" required autofocus="on" class="join_cheak_id in_e_sel_menu" minlength="3" maxlength="20">
+								<button type="button" class="id_user para_14" onclick="registerCheckFunction()">중복체크</button>
+							</li>
+							<li id="li_pw">
+								<input type="password" class="animation_shake" name="member_password" placeholder="비밀번호" id="reg_mb_password" required class="cheakpw in_e_sel_menu" minlength="3" maxlength="20" onkeyup="passwordcheckFunction();">
+							</li>
+							<li id="li_pw1">
+								<input type="password" class="animation_shake" placeholder="비밀번호 재확인" id="reg_mb_password_re" required class="cheakpw1 in_e_sel_menu" minlength="3" maxlength="20" onkeyup="passwordcheckFunction();">
+							</li>
+						</ul>
+					</div>
+					<div class="join_step4">
+						<ul>
+							<li id="li_name">
+								<input type="text" class="animation_shake" name="member_name" placeholder="이름" id="reg_mb_name" required class="cheakname in_e_sel_menu" size="10">              
+							</li>
+							<li id="li_mail"> 
+								<input type="text" class="animation_shake" name="member_email" placeholder="이메일" id="reg_mb_email" required class="cheakemail in_e_sel_menu" size="70" maxlength="100">
+							</li>
+							<li id="li_number">
+								<input type="text" class="animation_shake" name="member_hp" placeholder="휴대폰번호" id="reg_mb_hp"  required class="cheakenumber in_e_sel_menu" maxlength="20">
+							</li>
+						</ul>
+					</div>
+					<div class="id_users" style="display: none;"></div>
+					<div class="passwordCheckMessage" style="display: none;"></div>
+					<input type="submit" class="step_btn btn_bg_redicalRed" value="동의"/>
+				</form>
+		</div>
+	</div>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="./js/main.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.step_btn').click(function () {
+				$('#myForm .animation_shake').each(function (index) {
+						if($('#myForm .animation_shake').eq(index).val() === ''){
+							$(this).addClass('shake').stop().delay(600).queue(function () {
+								$(this).removeClass('shake');
+							});
+							if($(this).val().length > 1){
+								$(this).removeClass('shake');
+							}
+						}
+				});
+			});
+		});
+		//아이디 중복체크 ajax 구현 함수
+		function registerCheckFunction() {
+				var userID = $('#reg_mb_id').val();
+			// ajax 사용하지 않고, 아이디 중복체크 간단한 테스트 하기 위한 로직
+			// if ($('#reg_mb_id').val().length > 1) {
+			// 	$('.id_users').html('사용할 수 있는 아이디 입니다.');
+			// } else {
+			// 	$('.id_users').html('사용할 수 없는 아이디 입니다.');
+			// }
+			$.ajax({
+				type: 'post',
+				url: "",
+				data: { userID: userID },
+				success: function (result) {
+					if (result == 1) {
+						$('.id_users').css({
+							'color': 'red',
+							'font-size': '14px'
+						}).html('사용할 수 있는 아이디 입니다.');
+					} else {
+						$('.id_users').fadeIn(400).css({
+							'color': 'red',
+							'font-size': '14px'
+						}).html('사용할 수 없는 아이디 입니다.');
+					}
+				}
+			});
+		}
+		//비밀번호 확인, 서로 일치하지하는지 채크 하는 함수
+		function passwordcheckFunction() {
+			var userPassword1 = $('#reg_mb_password').val();
+			var userPassword2 = $('#reg_mb_password_re').val();
+
+			if(userPassword1 != userPassword2){
+				$('.passwordCheckMessage').fadeIn(400).css({
+					'color' : 'red',
+					'font-size': '14px',
+					'margin-top': '10px'
+				}).html('비밀번호가 서로 일치하지 않습니다.');
+			}else{
+				$('.passwordCheckMessage').html('');
+			}
+		}
+	</script>
+</body>
+</html>

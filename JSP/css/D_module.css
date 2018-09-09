@@ -1,0 +1,110 @@
+/*===============================
+
+- YOUNHOSO v4.0 -
+
+author: YOUNHOSO PUBLISHER
+email: thdbsgh3443@gmail.com
+Copyright 2017-2018
+
+=================================*/
+/*========= WEB FONT =========*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+
+/*========= TITLE SYSTEM =========*/
+html {font-size: 10px;}
+body {font-family: 'Montserrat', sans-serif;}
+[class*="para_"],
+[class*="tit_"]{ 
+	color: #333; 
+	line-height:1.5;
+}
+[class*="tit_"]{font-weight: 600;}
+[class*="para_"]{font-weight: 400;}
+
+.tit_16  {font-size: 1.6rem;}
+.tit_18  {font-size: 1.8rem;}
+.tit_20  {font-size: 2rem;}
+.tit_22  {font-size: 2.2rem;}
+.tit_24  {font-size: 2.4rem;}
+.tit_26  {font-size: 2.6rem;}
+.tit_28  {font-size: 2.8rem;}
+
+
+/*========= PARAGRAPH SYSTEM =========*/
+p,li,a,td,th,strong { /*본문글씨 기본 크기 16px*/
+	font-size: 1.6rem;
+	font-weight: normal;
+	vertical-align: top;
+}
+p,td {line-height: 1.8;}
+
+.para_12	{font-size:1.2rem;} /*본문글씨 크기 종류들*/
+.para_14	{font-size:1.4rem;}
+.para_16	{font-size:1.6rem;}
+.para_18	{font-size:1.8rem;}
+.para_20	{font-size:2rem;}
+
+/*========= BTN SYSTEM =========*/
+[class*="btn_bg_"],
+[class*="btn_line_"] {
+	width: 100%;
+	font-size: 1.6rem;
+	display: inline-block;
+	padding: 22px 0 20px 0;
+	text-align: center;	
+	border-radius: 0;
+	-moz-outline:none; 
+	outline:none;
+	-webkit-transition: all .35s ease-in-out;	
+	   -moz-transition: all .35s ease-in-out;	
+	     -o-transition: all .35s ease-in-out;	
+		    transition: all .35s ease-in-out;	
+}
+.btn_bg_orange          {color: #fff; border: 2px solid #ff7539; border-radius: 3rem; background:linear-gradient(to right, #ff7539 0%, #ff5a2c 100%);}
+.btn_bg_orange:hover    {color: #333; border-color:#ff5a2c; background:transparent; } 
+
+.btn_bg_glay            {color: #333; border: 2px solid #333; border-radius: 3rem; border: 1px solid #333;}
+.btn_bg_glay:hover      {color: #fff; background-color: #333;}
+
+.btn_bg_redicalRed      {color: #fff; background-color:#ff2b60; border-radius: 5px;}
+.btn_txt_underline      {text-decoration: underline;}
+
+/*========= INPUT ELEMENT SYSTEM =========*/
+[class*="in_e_"]{
+	width: 100%;
+	display: inline-block;
+	padding: 12px 20px;
+	box-sizing: border-box;
+	text-align: left;	
+	border-radius: 5px;
+	border: 1px solid #333;
+	
+	-webkit-transition: all .35s ease-in-out;	
+	   -moz-transition: all .35s ease-in-out;	
+	     -o-transition: all .35s ease-in-out;	
+		    transition: all .35s ease-in-out;	
+}
+
+.in_e_sel_menu {
+	width: 100%;
+    display: block;
+    padding: 15px 50px 15px 15px;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+       	 -o-appearance: none;
+    		appearance: none;
+}
+.in_e_sel_menu:focus {border-width: 2px; border-color:#ff2b60; box-sizing: border-box; -moz-outline:none; outline:none;}
+
+.in_btn{position:relative;}
+.in_btn button:focus:before,
+.in_btn button:focus:after {
+	-webkit-transition: all .35s ease-in-out;	
+	   -moz-transition: all .35s ease-in-out;	
+	     -o-transition: all .35s ease-in-out;	
+		    transition: all .35s ease-in-out;
+}
+
+
